@@ -1,0 +1,7 @@
+10 LET A = 1
+20 LET C = 1
+30 PRINT A;
+40 LET A = A * (-2)
+50 LET C = C + 1
+60 IF C <= 10 THEN GOTO 30
+99 END
