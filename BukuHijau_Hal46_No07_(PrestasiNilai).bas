@@ -1,0 +1,24 @@
+0 DATA 80,80,80,80
+10 READ A, B, C, D
+20 LET G$ = "-----------------------------"
+30 PRINT G$
+40 PRINT TAB(9); "DAFTAR NILAI"
+50 PRINT G$
+60 PRINT " 1. Nilai Pertama: "; A
+70 PRINT " 2. Nilai Kedua  : "; B
+80 PRINT " 3. Nilai Ketiga : "; C
+90 PRINT " 4. Nilai Keempat: "; D
+100 PRINT G$
+120 LET M = (A + B + C + D) / 4
+130 IF M > 80 THEN GOTO 170
+140 IF M <= 60 THEN GOTO 190
+150 LET P$ = "CUKUP BAIK"
+160 GOTO 210
+170 LET P$ = "BAIK"
+180 GOTO 210
+190 LET P$ = "BURUK"
+200 GOTO 210
+210 PRINT " KETERANGAN:"
+220 PRINT " PRESTASI ANDA "; P$
+230 PRINT G$
+999 END
