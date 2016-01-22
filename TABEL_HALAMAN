@@ -1,0 +1,33 @@
+PRINT
+INPUT "JUMLAH DATA: ", N
+FOR I = 1 TO N
+    CLS
+    PRINT
+    PRINT " INPUT DATA ("; I; "/"; N; ")"
+    PRINT STRING$(30, "-")
+    INPUT " NPM     : ", NPM$(I)
+    INPUT " NAMA    : ", NAMA$(I)
+    INPUT " NILAI   : ", NILAI(I)
+    TOTAL = TOTAL + NILAI(I)
+NEXT I
+FOR J = 0 TO (N - 1) STEP 5
+    CLS
+    PRINT
+    PRINT TAB(5); "DAFTAR NILAI MAHASISWA"; TAB(31); "| HAL:"; ((J / 5) + 1)
+    PRINT STRING$(40, "-")
+    PRINT " NO"; TAB(7); "NPM"; TAB(23); "NAMA"; TAB(35); "NILAI"
+    PRINT STRING$(40, "-")
+    FOR K = (J + 1) TO (J + 5)
+        PRINT K; TAB(5); NPM$(K); TAB(18); NAMA$(K); TAB(35); NILAI(K)
+        TS(J) = TS(J) + NILAI(K)
+        IF (K = N) GOTO 10
+    NEXT K
+    10 PRINT STRING$(40, "-")
+    PRINT TAB(23); "TOTAL NILAI:"; TAB(35); TS(J)
+    IF (K = N) THEN
+        PRINT TAB(12); "TOTAL NILAI SELURUHNYA:"; TOTAL
+    ELSE
+        PRINT
+        INPUT "Press ENTER to continue...", Z
+    END IF
+NEXT J
